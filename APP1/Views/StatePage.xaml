@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP1.Views.StatePage"
+             Title="StatePage"
+             xmlns:namespace="clr-namespace:APP1.ViewModel"
+             x:DataType="namespace:StateViewModel">
+    <!--<CollectionView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding Items}">-->
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2" >
+            <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>Baboon</x:String>
+                <x:String>Capuchin Monkey</x:String>
+                <x:String>Blue Monkey</x:String>
+                <x:String>Squirrel Monkey</x:String>
+                <x:String>Golden Lion Tamarin</x:String>
+                <x:String>Howler Monkey</x:String>
+                <x:String>Japanese Macaque</x:String>
+                <x:String>Mandrill</x:String>
+                <x:String>Proboscis Monkey</x:String>
+                <x:String>Red-shanked Douc</x:String>
+                <x:String>Gray-shanked Douc</x:String>
+                <x:String>Golden Snub-nosed Monkey</x:String>
+                <x:String>Black Snub-nosed Monkey</x:String>
+                <x:String>Tonkin Snub-nosed Monkey</x:String>
+                <x:String>Thomas's Langur</x:String>
+                <x:String>Purple-faced Langur</x:String>
+                <x:String>Gelada</x:String>
+            </x:Array>
+           
+        </CollectionView.ItemsSource>
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="{x:Type x:String}">
+
+                <SwipeView>
+               
+                    <Grid Padding="0, 5">
+
+                        <Frame>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer   Command="{Binding Source={RelativeSource  AncestorType={x:Type namespace:StateViewModel}} , Path=TapCommand}"
+                                    CommandParameter="{Binding .}"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <Label Text="{Binding .}" FontSize="24"></Label>
+                        </Frame>
+                    </Grid>
+                </SwipeView>
+
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+
+    </CollectionView>
+</ContentPage>

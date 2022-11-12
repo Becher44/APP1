@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP1.Views.SignUpSMSVerifivationPage"
+             Title="SignUpSMSVerifivationPage"
+             xmlns:namespace="clr-namespace:APP1.ViewModel"
+             x:DataType="namespace:SignUpSMSVerifivationViewModel">
+
+
+    <Grid RowDefinitions="100, Auto" ColumnDefinitions=".25*, .25*, .25*, .25*" Padding="10" ColumnSpacing="10" RowSpacing="10">
+        <Frame BorderColor="Black" >
+        <Entry MaxLength="1" ></Entry>
+        </Frame>
+        <Frame  Grid.Column="1" BorderColor="Black" >
+            <Entry MaxLength="1"  ></Entry>
+        </Frame>
+        <Frame   Grid.Column="2" BorderColor="Black" >
+            <Entry MaxLength="1" ></Entry>
+        </Frame>
+        <Frame    Grid.Column="3" BorderColor="Black" >
+            <Entry MaxLength="1"></Entry>
+        </Frame> 
+
+        <Button Grid.Row="1" Grid.ColumnSpan="4" Text="Verify" Command="{Binding GoToSatateCommand}"></Button>
+    </Grid>
+    
+</ContentPage>
